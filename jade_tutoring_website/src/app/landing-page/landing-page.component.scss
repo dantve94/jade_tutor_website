@@ -1,0 +1,65 @@
+main{
+    background-color: #545454;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  .flex-container {
+    /* We first create a flex layout context */
+    display: flex;
+  
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+  
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+  }
+
+  /* Large */
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    /* This aligns items to the end line on main-axis */
+    justify-content: flex-end;
+  }
+  
+  /* Medium screens */
+  @media all and (max-width: 800px) {
+    .navigation {
+      /* When on medium sized screens, we center it by evenly distributing empty space around items */
+      justify-content: space-around;
+    }
+  }
+  
+  /* Small screens */
+  @media all and (max-width: 500px) {
+    .navigation {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+
+  .weird{
+    position:relative; 
+    left:25px; 
+  }
